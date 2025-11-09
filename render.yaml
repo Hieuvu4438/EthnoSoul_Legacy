@@ -1,18 +1,19 @@
 services:
   - type: web
     name: ocr-api
-    env: python
-    region: singapore  
-    plan: free  
-    buildCommand: |
-      apt-get update && 
-      apt-get install -y tesseract-ocr tesseract-ocr-khm poppler-utils && 
-      pip install --upgrade pip && 
-      pip install -r requirements_api.txt
-    startCommand: "gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 api:app"
+    env: docker
+    region: singapore
+    plan: free
+    # Docker configuration
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    # Environment variables
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: PORT
-        generateValue: true
+        value: 10000
+      - key: TESSDATA_PREFIX
+        value: /usr/share/tesseract-ocr/5/tessdata
+    # Health check
     healthCheckPath: /api/health
+    # Auto-deploy
+    autoDeploy: true
