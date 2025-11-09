@@ -11,11 +11,12 @@ CORS(app, resources={
     r"/api/*": {
         "origins": [
             "http://localhost:3000",
-            "https://*.vercel.app",  
-            "https://your-domain.com"  
+            "https://*.vercel.app",  # Cho phép tất cả Vercel subdomains
+            "https://your-domain.com"  # Thêm domain chính thức sau
         ],
         "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
+        "allow_headers": ["Content-Type"],
+        "supports_credentials": False
     }
 })
 
@@ -29,12 +30,11 @@ def allowed_file(filename):
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
-    """Health check endpoint"""
     return jsonify({
         'status': 'healthy',
-        'message': 'OCR API is running'
-    })
-
+        'service': 'OCR API',
+        'version': '1.0.0'
+    }), 200
 
 @app.route('/api/ocr', methods=['POST'])
 def process_ocr():
@@ -67,11 +67,13 @@ def process_ocr():
     
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    pass
 
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify({'status': 'ok'})
 
 if __name__ == '__main__':
+    import os
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
