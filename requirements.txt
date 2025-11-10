@@ -1,3 +1,9 @@
+setuptools
+wheel
+build
+numpy
+numpy>=2.0
+
 # Web Framework
 Flask==3.0.0
 Flask-CORS==4.0.0
@@ -6,8 +12,7 @@ Werkzeug==3.0.0
 
 # Image Processing
 Pillow==10.4.0
-opencv-python-headless==4.8.1.78
-numpy==1.24.3
+opencv-python-headless==4.10.0.84
 
 # OCR
 pytesseract==0.3.13
