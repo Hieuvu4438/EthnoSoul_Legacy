@@ -1,4 +1,4 @@
-GEMINI_API_KEY = "AIzaSyCZP4Oyc6a2b_YcMFoL0sOVKV8KoGOvfGo"
+GEMINI_API_KEY = "your_gemini_api_key_here"
 GEMINI_MODEL = "gemini-2.5-pro"
 NUM_EXAMPLES = 10
 TEMPERATURE = 0.3
