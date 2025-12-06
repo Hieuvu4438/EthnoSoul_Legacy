@@ -1,0 +1,71 @@
+1. Paraphrasing
+Bạn là một chuyên gia ngôn ngữ học. Nhiệm vụ của bạn là Data Augmentation (Tăng cường dữ liệu) cho bài toán dịch máy.
+
+Tôi sẽ đưa cho bạn một câu gốc Tiếng Việt (Source). Hãy viết lại câu này thành 5 biến thể khác nhau (Paraphrase), tuân thủ nghiêm ngặt các yêu cầu sau:
+1. Giữ nguyên ý nghĩa cốt lõi (Semantic meaning).
+2. Giữ nguyên các thực thể chính (Entities) như: con vật, đồ vật, địa danh.
+3. Đa dạng hóa cấu trúc câu (Chủ động, bị động, đảo ngữ) nhưng không làm sai lệch hành động.
+
+Ví dụ:
+Input: "Con trâu ăn cỏ ngoài ruộng"
+Output:
+1. "Ở ngoài ruộng, con trâu đang ăn cỏ."
+2. "Cỏ ngoài ruộng đang bị con trâu ăn."
+3. "Có một con trâu đang ăn cỏ tại ruộng."
+4. "Ngoài cánh đồng, trâu đang gặm cỏ."
+5. "Việc ăn cỏ của con trâu diễn ra ngoài ruộng."
+
+Input: "[CHÈN CÂU TIẾNG VIỆT CỦA BẠN VÀO ĐÂY]"
+Output:
+
+2. Lexical Substitution
+Tôi có một danh sách từ vựng tiếng Thái Đen (Tai Dam) và nghĩa tiếng Việt tương ứng dưới đây:
+
+[TỪ ĐIỂN MINI - TRÍCH XUẤT TỪ DATA CỦA BẠN]
+- ꪀꪱ (ka): quạ, ca
+- ꪚ꫁ꪱꪙ (bản): bản, làng
+- ꪹꪣꪉ (mương): mường
+- ꪝꪴ (phu): núi
+- ꪒꪲ (di): tốt
+- ꪮ꪿ꪱꪀ (ak): ác
+- ꪹꪚ꪿ꪱ (báu): không
+- ꪀꪲꪙ (kin): ăn
+- ꪙꪮꪙ (non): ngủ
+[HẾT TỪ ĐIỂN]
+
+Nhiệm vụ: Hãy thay thế các từ Tiếng Việt trong câu sau bằng từ Thái Đen tương ứng trong từ điển trên. Nếu từ nào không có trong từ điển, hãy giữ nguyên tiếng Việt. Đừng thay đổi trật tự từ.
+
+Input: "Người ở bản mường không làm điều ác"
+Output mong muốn: "Người ở ꪚ꫁ꪱꪙ ꪹꪣꪉ ꪹꪚ꪿ꪱ làm điều ꪮ꪿ꪱꪀ"
+
+3. Grammar Injection
+Bạn là một chuyên gia về ngữ pháp tiếng Thái Đen (Tai Dam). Dưới đây là các quy tắc ngữ pháp cốt lõi của ngôn ngữ này mà bạn phải tuân thủ tuyệt đối:
+
+### QUY TẮC NGỮ PHÁP (GRAMMAR RULES):
+1. Cấu trúc cơ bản: S + V + O (Chủ ngữ + Động từ + Tân ngữ).
+2. Vị trí Tính từ: Tính từ luôn đứng SAU Danh từ bổ nghĩa.
+   - Sai: "Tốt người" (Good person)
+   - Đúng: "Người tốt" (Person Good) -> [N + Adj]
+3. Phủ định: Dùng từ "báu" (ꪹꪚ꪿ꪱ) đặt TRƯỚC Động từ hoặc Tính từ.
+   - Ví dụ: "Không ăn" -> "Báu ăn"
+4. So sánh: [Tính từ] + [như] + [Danh từ].
+
+### NHIỆM VỤ:
+Tôi sẽ cung cấp cho bạn một tập hợp các từ (Tokens) hoặc một câu tiếng Việt thô. Hãy sắp xếp lại các từ này thành một câu hoàn chỉnh tuân theo ngữ pháp Tiếng Thái Đen ở trên.
+
+### VÍ DỤ (Few-shot Learning):
+Input (VN): "Cái bản lớn này"
+Logic chuyển đổi: [Cái bản] (Noun) + [lớn] (Adj) + [này] (Dem)
+Output (Tai Dam Logic): "Bản lớn này" (tương ứng: ꪚ꫁ꪱꪙ ꪻꪐ꪿ ꪙꪲ)
+
+Input (VN): "Nó không đi về nhà"
+Logic chuyển đổi: [Nó] (S) + [báu] (Neg) + [đi] (V) + [về nhà] (O)
+Output (Tai Dam Logic): "Nó báu đi về nhà" (tương ứng: ꪣꪰꪙ ꪹꪚ꪿ꪱ ꪼꪜ ꪹꪣꪮ ꪹꪭꪙ)
+
+Input (VN): "Cánh rừng xanh đẹp"
+Logic chuyển đổi: [Cánh rừng] (Noun) + [xanh] (Adj 1) + [đẹp] (Adj 2)
+Output (Tai Dam Logic): "Rừng xanh đẹp"
+
+### THỰC HIỆN:
+Input: "[CHÈN CÂU CẦN DỊCH HOẶC CÁC TỪ RỜI RẠC VÀO ĐÂY]"
+Output (Chỉ in ra câu đã sắp xếp logic, không giải thích):

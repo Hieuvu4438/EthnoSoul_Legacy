@@ -1,0 +1,442 @@
+=======================================================================
+           PHÂN TÍCH NGỮ PHÁP TIẾNG THÁI CỔ (TAI DAM/THÁI ĐEN)
+                 TẠI VIỆT NAM - LOW RESOURCE LANGUAGE
+=======================================================================
+
+I. GIỚI THIỆU TỔNG QUAN
+=======================================================================
+
+1. Nguồn gốc và phân bố:
+   - Tiếng Thái Đen (Tai Dam) thuộc ngữ hệ Tai-Kadai
+   - Phân bố chủ yếu tại vùng Tây Bắc Việt Nam (Sơn La, Điện Biên, Lai Châu, Hòa Bình)
+   - Sử dụng chữ Thái cổ riêng biệt (Tai Viet script)
+   - Ước tính khoảng 1-2 triệu người sử dụng
+
+2. Đặc điểm chữ viết:
+   - Sử dụng bảng chữ Tai Viet (Unicode range: U+AA80-U+AADF)
+   - Hệ thống phụ âm đầu: ꪀ, ꪁ, ꪂ, ꪃ, ꪄ, ꪅ, ꪆ, ꪇ, ꪈ, ꪉ, ꪊ, ꪋ, ꪌ, ꪍ, ꪎ, ꪏ...
+   - Dấu thanh được đánh bằng các ký tự phụ: ꪿ (thanh 1), ꫁ (thanh 2)
+   - Nguyên âm ghép với phụ âm tạo thành âm tiết
+
+=======================================================================
+II. CẤU TRÚC TỪ LOẠI (PHÂN TÍCH TỪ DATA)
+=======================================================================
+
+Từ dữ liệu phân tích được các loại từ sau:
+
+1. DANH TỪ (d. - Danh từ):
+   Ví dụ từ corpus:
+   - ꪀꪱ (ka) = quạ (con vật)
+   - ꪀꪱ (ka) = ca (đồ dùng) 
+   - ꪚ꫁ꪱꪙ (bản) = bản, làng
+   - ꪹꪣꪉ (mương) = mường
+   - ꪝꪴ (phu) = núi
+   - ꪜ꪿ꪱ (pa) = rừng
+   - ꪙꪾ꫁ (nưa/nước) = nước
+   - ꪮ꫁ꪱꪥ (oi) = bố, cha
+   - ꪹꪯꪸꪣ (mae) = mẹ
+   - ꪩꪴꪀ (luk) = con
+   - ꪶꪔ (tô) = thân, người
+
+2. ĐỘNG TỪ (đg. - Động từ):
+   Ví dụ từ corpus:
+   - ꪀ꫁ꪱ (ka) = ươm (mạ)
+   - ꪀ꪿ꪱꪀ (kak) = gác
+   - ꪹꪮꪱ (ao) = lấy, đem, mang
+   - ꪼꪜ (pai) = đi
+   - ꪣꪱ (ma) = đến, về
+   - ꪹꪥꪸꪒ (yet) = làm
+   - ꪀꪲꪙ (kin) = ăn, uống
+   - ꪙꪮꪙ (non) = ngủ, nằm
+   - ꪚꪲꪙ (bin) = bay
+   - ꪵꪚ꪿ꪙ (baen) = bắn
+
+3. TÍNH TỪ (t. - Tính từ):
+   Ví dụ từ corpus:
+   - ꪒꪲ (di) = tốt, đẹp
+   - ꪮ꪿ꪱꪀ (ak) = ác
+   - ꪹꪚꪱ (bau) = nhẹ
+   - ꪘꪰꪀ (nak) = nặng
+   - ꪚꪱꪉ (bang) = mỏng
+   - ꪨꪱꪥ (lai) = nhiều
+   - ꪙ꫁ꪮꪥ (noi) = nhỏ, ít
+   - ꪻꪐ꪿ (nai) = to, lớn
+
+4. ĐẠI TỪ (đ. - Đại từ):
+   Ví dụ từ corpus:
+   - ꪮꪱ (a) = cô (xưng hô)
+   - ꪛꪱ (ba) = bà
+   - ꪚ꫁ꪱ (ba) = thằng, ông (thân mật)
+   - ꪯꪱꪥ (ai) = anh
+   - ꪙ꫁ꪮꪉ (nong) = em
+   - ꪯ꫁ꪽ (an) = ấy, đấy
+
+5. TRỢ TỪ (tr. - Trợ từ):
+   Ví dụ từ corpus:
+   - ꪮꪱ = à, ư (câu hỏi)
+   - ꪮ꪿ꪱꪫ = hơi
+   - ꪹꪚ꪿ꪱ = không, chẳng
+
+6. GIỚI TỪ (k./kng. - Kết từ/Khẩu ngữ):
+   Ví dụ từ corpus:
+   - ꪀ꪿ꪱ = tận, đến
+   - ꪵꪀ꪿ꪉ = và, lẫn
+
+7. LƯỢNG TỪ (p. - Phụ từ số lượng):
+   Ví dụ từ corpus:
+   - ꪮ꪿ꪱꪙ = hàng, những, vô kể
+   - ꪮ꪿ꪽ = tận
+
+=======================================================================
+III. HỆ THỐNG THANH ĐIỆU
+=======================================================================
+
+Tiếng Thái cổ có hệ thống 6 thanh điệu, được đánh dấu như sau:
+
+1. Thanh không dấu (thanh ngang/trung bình):
+   - ꪀꪱ = ka (thanh ngang)
+
+2. Thanh ꪿ (dấu mai ek - thanh 1):
+   - ꪀ꪿ꪱ = ká (thanh sắc)
+
+3. Thanh ꫁ (dấu mai tho - thanh 2):
+   - ꪀ꫁ꪱ = kà (thanh huyền)
+
+Quy luật thanh điệu phụ thuộc vào:
+   - Nhóm phụ âm đầu (cao/thấp)
+   - Loại âm tiết (mở/đóng)
+   - Dấu thanh bổ sung
+
+=======================================================================
+IV. CẤU TRÚC ÂM TIẾT
+=======================================================================
+
+1. Cấu trúc cơ bản: C(C) + V + (C) + T
+   - C = Phụ âm đầu (Consonant)
+   - CC = Tổ hợp phụ âm
+   - V = Nguyên âm (Vowel) 
+   - C = Phụ âm cuối (Final consonant)
+   - T = Thanh điệu (Tone)
+
+2. Hệ thống nguyên âm chính:
+   - ꪱ = /a/ dài
+   - ꪲ = /i/
+   - ꪳ = /ɯ/ (nguyên âm ư)
+   - ꪴ = /u/
+   - ꪵ = /e/
+   - ꪶ = /o/
+   - ꪷ = /ɔ/ (nguyên âm o)
+   - ꪸ = /ia/
+   - ꪹ = /ɛ/ hoặc nguyên âm trước
+   - ꪺ = /ua/
+   - ꪻ = /ai/ (nguyên âm đôi)
+   - ꪼ = /oa/
+   - ꪽ = /an/
+   - ꪾ = /am/
+
+3. Hệ thống phụ âm cuối:
+   - ꪀ = /k/
+   - ꪉ = /ŋ/ (ng)
+   - ꪒ = /t/
+   - ꪙ = /n/
+   - ꪚ = /p/
+   - ꪣ = /m/
+   - ꪫ = /w/
+   - ꪥ = /j/ (y)
+
+=======================================================================
+V. NGỮ PHÁP CÂU
+=======================================================================
+
+1. TRẬT TỰ TỪ CƠ BẢN: SVO (Chủ ngữ - Vị ngữ - Tân ngữ)
+   
+   Ví dụ từ corpus:
+   - ꪢꪴ ꪵꪚꪙ ꪎꪺꪙ = lợn phá vườn (S + V + O)
+   - ꪶꪙ꫁ꪀ ꪚꪲꪙ = chim bay (S + V)
+   - ꪹꪮꪱ ꪨꪺ = lấy củi (V + O)
+
+2. VỊ TRÍ TÍNH TỪ: Đứng sau danh từ
+   
+   Ví dụ từ corpus:
+   - ꪚ꫁ꪱꪙ ꪻꪐ꪿ = bản to (N + Adj)
+   - ꪹꪣꪉ ꪨꪺꪉ = mường lớn (N + Adj)
+   - ꪊꪸ꫁ ꪚꪱꪉ = giấy mỏng (N + Adj)
+   - ꪬꪱꪚ ꪹꪚꪱ = gánh nhẹ (N + Adj)
+
+3. CẤU TRÚC SO SÁNH:
+   
+   Ví dụ từ corpus:
+   - ꪒꪾ ꪹꪁꪷ꪿ ꪶꪔ ꪀꪱ = đen như con quạ
+   - Cấu trúc: Adj + ꪹꪁꪷ꪿/như + N
+
+4. CẤU TRÚC PHỦ ĐỊNH: Dùng ꪹꪚ꪿ꪱ (không, chẳng)
+   
+   Ví dụ từ corpus:
+   - ꪹꪚ꪿ꪱ ꪣꪲ ꪹꪥꪸꪒ = không làm
+   - ꪹꪚ꪿ꪱ ꪼꪒ꫁ = không được
+   - ꪹꪚ꪿ꪱ ꪹꪬꪸꪙ = không thấy
+
+5. CẤU TRÚC CÂU HỎI: Thêm trợ từ cuối câu
+   
+   Ví dụ từ corpus:
+   - ꪹꪥꪸꪒ ꪵꪙꪫ ꪙ꫁ꪽ ꪮꪱ = làm như thế à?
+   - ꪫ꪿ꪱ ꪵꪕ꫁ ꪮꪱ = nói thật ư?
+
+6. TỪ CHỈ THỂ CÁCH THỨC:
+   
+   Ví dụ từ corpus:
+   - ꪀ꪿ꪱ ꪻꪒ = đâu (chỉ nơi chốn)
+   - ꪵꪙꪫ ꪙ꫁ꪽ = như thế (chỉ cách thức)
+
+=======================================================================
+VI. TỪ GHÉP VÀ TỪ LÁY
+=======================================================================
+
+1. TỪ GHÉP ĐẲNG LẬP (hai thành tố ngang bằng):
+   
+   Ví dụ từ corpus:
+   - ꪮ꫁ꪱꪥ ꪹꪯꪸꪣ = bố mẹ, cha mẹ
+   - ꪮ꫁ꪱꪥ ꪙ꫁ꪮꪉ = anh em
+   - ꪚ꪿ꪱꪫ ꪎꪱꪫ = trai gái
+   - ꪚ꫁ꪱꪙ ꪹꪣꪉ = bản mường
+   - ꪚ꫁ꪱꪙ ꪙꪱ = làng mạc, nông thôn
+
+2. TỪ GHÉP CHÍNH PHỤ (một thành tố chính + bổ nghĩa):
+   
+   Ví dụ từ corpus:
+   - ꪮ꫁ꪱꪥ ꪩꪴꪉ = bác trai (cha + lớn)
+   - ꪮ꫁ꪱꪥ ꪜꪴ꪿ = ông nội (cha + cụ)
+   - ꪮ꫁ꪱꪥ ꪔꪱ = ông ngoại (cha + bên ngoài)
+   - ꪙꪾ꫁ ꪹꪚꪸ꫁ = biển (nước + bể)
+   - ꪛ꫁ꪱꪙ ꪭ꫁ꪮꪀ = bạn học
+
+3. TỪ LÁY HOÀN TOÀN:
+   
+   Ví dụ từ corpus:
+   - ꪚꪰ꫁ꪉ ꪚꪰ꫁ꪉ = băng băng
+   - ꪵꪛꪀ ꪵꪛꪀ = be be (tiếng dê kêu)
+   - ꪶꪚꪉ ꪶꪚꪉ = oang oang
+   - ꪛꪴ꪿ꪣ ꪛꪴ꪿ꪣ = đoàng đoàng
+   - ꪛꪺꪀ ꪛꪺꪀ = sùng sục
+
+4. TỪ LÁY BỘ PHẬN:
+   
+   Ví dụ từ corpus:
+   - ꪚꪷ ꪥꪷ = tuyệt sắc
+   - ꪵꪚꪉ ꪵꪚ꪿ꪫ = quạnh quẽ
+   - ꪯꪱꪫ ꪹꪯꪸꪫ = huyên náo
+   - ꪹꪚꪷꪬꪉ ꪛꪭꪱꪥ = ẩn hiện
+
+=======================================================================
+VII. HỆ THỐNG ĐẠI TỪ THÂN TỘC
+=======================================================================
+
+Phân tích từ corpus cho thấy hệ thống xưng hô phong phú:
+
+1. QUAN HỆ TRỰC HỆ:
+   - ꪮ꫁ꪱꪥ = bố, cha
+   - ꪹꪯꪸꪣ = mẹ
+   - ꪮ꫁ꪱꪥ ꪮꪮꪀ = bố đẻ, cha đẻ
+   - ꪮ꫁ꪱꪥ ꪩꪸ꫁ꪉ = bố nuôi, cha nuôi
+   - ꪮ꫁ꪱꪥ ꪻꪢ꪿ = bố dượng
+   - ꪩꪴꪀ = con
+   - ꪨꪱꪙ = cháu
+
+2. QUAN HỆ ANH CHỊ EM:
+   - ꪯꪱꪥ = anh
+   - ꪮ꫁ꪱꪥ ꪝꪲ꪿ = anh (bậc trên)
+   - ꪙ꫁ꪮꪉ = em
+   - ꪮ꫁ꪱꪥ ꪙ꫁ꪮꪉ = anh em
+
+3. QUAN HỆ ÔNG BÀ:
+   - ꪮ꫁ꪱꪥ ꪜꪴ꪿ = ông nội
+   - ꪮ꫁ꪱꪥ ꪔꪱ = ông ngoại
+   - ꪛꪱ = bà
+
+4. QUAN HỆ CHÚ BÁC:
+   - ꪮꪱꪫ = chú
+   - ꪮꪱ = cô
+   - ꪮ꫁ꪱꪥ ꪩꪴꪉ = bác trai
+   - ꪮ꫁ꪱꪥ ꪙ꫁ꪱ = ông cậu
+
+=======================================================================
+VIII. TỪ VỰNG THEO CHỦ ĐỀ
+=======================================================================
+
+1. NÔNG NGHIỆP:
+   - ꪙꪱ = ruộng
+   - ꪼꪭ꪿ = nương
+   - ꪀ꫁ꪱ = mạ
+   - ꪹꪄ꫁ꪱ = thóc, lúa, cơm
+   - ꪚꪱꪙ = bừa
+   - ꪼꪖ = cày
+   - ꪀ꫁ꪱ ꪏꪾ = mạ giâm
+   - ꪀ꫁ꪱ ꪶꪠꪉ = mạ không giâm
+
+2. TỰ NHIÊN:
+   - ꪝꪴ = núi
+   - ꪜ꪿ꪱ = rừng
+   - ꪙꪾ꫁ = nước
+   - ꪡ꫁ꪱ = trời
+   - ꪒꪲꪙ = đất
+   - ꪶꪠꪙ = mưa
+   - ꪵꪒꪒ = nắng
+
+3. ĐỘNG VẬT:
+   - ꪀꪱ = quạ
+   - ꪢꪴ = lợn
+   - ꪁꪫꪱꪥ = trâu
+   - ꪣ꫁ꪱ = ngựa
+   - ꪢꪱ = chó
+   - ꪼꪀ꪿ = gà
+   - ꪶꪙ꫁ꪀ = chim
+   - ꪵꪚ꫁ = dê
+   - ꪜꪱ = cá
+   - ꪹꪎ = hổ
+
+4. ĐỒ VẬT:
+   - ꪹꪭꪙ = nhà
+   - ꪔꪴ = cửa
+   - ꪣꪲꪒ = dao
+   - ꪢꪷ꫁ = nồi
+   - ꪚꪴꪒ = bút
+   - ꪎꪳ = sách, thư
+   - ꪹꪭ = thuyền
+
+5. CƠ THỂ:
+   - ꪬꪺ = đầu
+   - ꪔꪱ = mắt
+   - ꪬꪴ = tai
+   - ꪶꪎꪚ = miệng, môi
+   - ꪣꪳ = tay
+   - ꪔꪲꪙ = chân
+   - ꪶꪔ = thân, người
+
+6. THỜI GIAN:
+   - ꪣꪳ꫁ = ngày
+   - ꪁꪳꪙ = đêm
+   - ꪹꪚꪙ = tháng, trăng
+   - ꪜꪲ = năm
+   - ꪹꪫꪸꪙ = trưa
+
+=======================================================================
+IX. NGỮ NGHĨA VÀ HIỆN TƯỢNG ĐA NGHĨA
+=======================================================================
+
+Phân tích từ corpus cho thấy hiện tượng đa nghĩa phổ biến:
+
+1. Ví dụ từ ꪀꪱ (ka):
+   - Nghĩa 1: quạ (danh từ - con vật)
+   - Nghĩa 2: ca (danh từ - đồ dùng)
+   
+2. Ví dụ từ ꪚ꫁ꪱ (ba):
+   - Nghĩa 1: đa (cây)
+   - Nghĩa 2: thằng (đại từ)
+   - Nghĩa 3: điên (tính từ)
+   - Nghĩa 4: giãy (động từ)
+
+3. Ví dụ từ ꪹꪮꪱ (ao):
+   - Nghĩa 1: lấy
+   - Nghĩa 2: đem, mang
+   - Nghĩa 3: cho vào
+   - Nghĩa 4: dùng
+
+4. Ví dụ từ ꪮꪱꪥ (ai):
+   - Nghĩa 1: mùi
+   - Nghĩa 2: hôi
+   - Nghĩa 3: hơi
+   - Nghĩa 4: khí
+
+=======================================================================
+X. THÀNH NGỮ VÀ TỤC NGỮ
+=======================================================================
+
+Từ corpus trích xuất được các thành ngữ:
+
+1. THÀNH NGỮ SO SÁNH:
+   - ꪒꪾ ꪹꪁꪷ꪿ ꪶꪔ ꪀꪱ = đen như con quạ
+   - ꪘ꫁ꪱ ꪄꪱꪫ ꪡꪮꪉ ꪹꪁꪷ꪿ ꪚꪮꪀ = mặt tươi như hoa
+
+2. THÀNH NGỮ TỪ GHÉP:
+   - ꪼꪒ꫁ ꪚꪱꪚ ꪼꪒ꫁ ꪹꪫꪸꪙ = tai bay vạ gió
+   - ꪚ꪿ꪱꪫ ꪵꪕꪫ ꪁꪫꪱꪥ ꪣ꫁ꪱ = tôi tớ như trâu ngựa
+   - ꪔꪾꪚ ꪻꪐ꪿ ꪚꪲ ꪨꪺꪉ = to gan lớn mật
+   - ꪚꪱꪚ ꪻꪊ = cực lòng
+
+3. TỤC NGỮ:
+   - ꪹꪥꪸꪒ ꪮ꪿ꪱꪀ ꪼꪒ꫁ ꪮ꪿ꪱꪀ = làm ác được ác (ác giả ác báo)
+   - ꪹꪚ꪿ꪱ ꪣꪲ ꪹꪥꪸꪒ ꪨꪷ꫁ ꪹꪚ꪿ꪱ ꪣꪲ ꪀꪲꪙ = không làm thì chẳng có ăn
+   - ꪩꪴꪀ ꪹꪚ꪿ꪱ ꪹꪜꪸꪙ ꪝꪷ꪿ ꪵꪣ꪿ ꪜꪱꪀ ꪼꪒ꫁ = con hư cha mẹ nói nhiều
+
+=======================================================================
+XI. ĐẶC ĐIỂM VĂN HÓA QUA NGÔN NGỮ
+=======================================================================
+
+1. VĂN HÓA NÔNG NGHIỆP:
+   - Từ vựng phong phú về lúa nước: mạ, ruộng, bừa, cày
+   - Các từ về mùa màng, thời tiết
+   - Thuật ngữ canh tác: ꪚꪱꪙ ꪬ꪿ꪱ ꪠ꫁ꪱꪙ (bừa đợt một), ꪚꪱꪙ ꪄ꪿ꪱꪉ (bừa đợt hai)
+
+2. TỔ CHỨC XÃ HỘI:
+   - Hệ thống bản mường: ꪚ꫁ꪱꪙ (bản), ꪹꪣꪉ (mường)
+   - Chức danh: ꪡꪸ (phìa - chủ đất), ꪀꪫꪱꪙ (quan)
+   - Tầng lớp: ꪵꪚ꪿ꪀ (tuần đinh), ꪚ꪿ꪱꪫ ꪻꪋ꫁ (trai hầu)
+
+3. TÍN NGƯỠNG:
+   - Thuật ngữ tâm linh: ꪡꪽ (vía), ꪛꪺ (hoá phép)
+   - Nghi lễ: ꪚꪰꪉ ꪡꪽ (phép chém vía), ꪚꪰꪉ ꪶꪔ (phép hộ mệnh)
+   - Thiên can địa chi: ꪀ꪿ꪱ (Quý)
+
+4. VĂN CHƯƠNG (vh = văn học):
+   Nhiều từ được đánh dấu "vh" cho thấy được dùng trong văn thơ:
+   - ꪚꪴꪙ ꪝꪽ = em yêu (trong thơ tình)
+   - ꪚꪺ ꪭꪱ = thanh (chỉ gái đẹp)
+   - ꪚꪺ ꪶꪭꪣ = lịch (chỉ trai đẹp)
+
+=======================================================================
+XII. GHI CHÚ PHƯƠNG PHÁP NGHIÊN CỨU
+=======================================================================
+
+1. NGUỒN DỮ LIỆU:
+   - Từ điển điện tử với 13,400+ mục từ
+   - Bảng dữ liệu: taidamtb (Tai Dam Từ Bằng)
+   - Cấu trúc: ID, Từ ngữ, Số từ, Phiên âm, IPA, Loại từ, Nghĩa tiếng Việt
+
+2. HẠN CHẾ:
+   - Đây là ngôn ngữ low-resource với ít tài liệu số hóa
+   - Thiếu corpus song ngữ lớn
+   - Cần nghiên cứu thêm về ngữ âm và phương ngữ
+
+3. HƯỚNG PHÁT TRIỂN:
+   - Xây dựng corpus song ngữ Thái-Việt
+   - Phát triển công cụ NLP cho tiếng Thái cổ
+   - Số hóa thêm văn bản cổ
+
+=======================================================================
+XIII. TÀI LIỆU THAM KHẢO
+=======================================================================
+
+1. Giáo trình tiếng Thái Tây Bắc - Đại học Tây Bắc
+2. Từ điển Thái-Việt - Viện Ngôn ngữ học
+3. Nghiên cứu về nhóm ngôn ngữ Tai-Kadai tại Việt Nam
+4. Unicode Standard - Tai Viet script documentation
+5. Data corpus: taidamtb.sql, corpus.csv
+
+=======================================================================
+                            KẾT LUẬN
+=======================================================================
+
+Tiếng Thái Đen (Tai Dam) là một ngôn ngữ quan trọng trong gia đình 
+ngôn ngữ Tai-Kadai tại Việt Nam. Với hệ thống chữ viết riêng biệt,
+cấu trúc ngữ pháp SVO, hệ thống thanh điệu phong phú và từ vựng đa
+dạng phản ánh nền văn hóa nông nghiệp lúa nước, tiếng Thái cổ cần
+được bảo tồn và nghiên cứu sâu hơn.
+
+Corpus hiện tại với hơn 13,000 mục từ là nguồn tài liệu quý giá cho
+việc nghiên cứu ngôn ngữ học và phát triển các ứng dụng công nghệ
+ngôn ngữ cho cộng đồng người Thái tại Việt Nam.
+
+=======================================================================
+           Phân tích bởi: AI Language Analysis System
+           Ngày: 04/12/2025
+=======================================================================
